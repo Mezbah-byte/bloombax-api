@@ -1,0 +1,24 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+</IfModule>
+
+# Handle CORS preflight requests
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+
+    RewriteEngine on
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule .* index.php/$0 [PT,L]
+
+    php_value allow_url_fopen On
+    php_value allow_url_include Off
+    php_value post_max_size 8M
+    php_value upload_max_filesize 2M
+    php_value max_execution_time 30
+    php_value always_populate_raw_post_data -1
+</IfModule>
