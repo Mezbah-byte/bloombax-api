@@ -116,12 +116,12 @@ class Auth extends CI_controller
 
                     $this->auth_model->addCustomer($form);
 
-                    $formArray = array();
-                    $formArray['from'] = 'regBonus';
-                    $formArray['to_user'] = $un_id;
-                    $formArray['amount'] = 20;
-                    $formArray['created_at'] = date('Y-m-d H:i:s');
-                    $this->auth_model->addRewardBalance($formArray);
+                    // $formArray = array();
+                    // $formArray['from'] = 'regBonus';
+                    // $formArray['to_user'] = $un_id;
+                    // $formArray['amount'] = 20;
+                    // $formArray['created_at'] = date('Y-m-d H:i:s');
+                    // $this->auth_model->addRewardBalance($formArray);
 
                     $sessionId = md5(uniqid());
                     addSessionId($un_id, $sessionId);
