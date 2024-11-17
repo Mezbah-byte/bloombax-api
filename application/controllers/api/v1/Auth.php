@@ -82,18 +82,18 @@ class Auth extends CI_controller
                     $form['refered_by'] = $referer_data['un_id'];
 
                     // Determine placement based on the side selected
-                    if ($side == 'left') {
-                        $placement_id = $this->auth_model->findAvailableLeftPlacement($referer_data['un_id']);
-                    } else if ($side == 'right') {
-                        $placement_id = $this->auth_model->findAvailableRightPlacement($referer_data['un_id']);
-                    } else {
-                        $response = array('status' => false, 'reason' => 'Invalid side selected');
-                        $this->output->set_content_type('application/json')->set_output(json_encode($response));
-                        return;
-                    }
+                    // if ($side == 'left') {
+                    //     $placement_id = $this->auth_model->findAvailableLeftPlacement($referer_data['un_id']);
+                    // } else if ($side == 'right') {
+                    //     $placement_id = $this->auth_model->findAvailableRightPlacement($referer_data['un_id']);
+                    // } else {
+                    //     $response = array('status' => false, 'reason' => 'Invalid side selected');
+                    //     $this->output->set_content_type('application/json')->set_output(json_encode($response));
+                    //     return;
+                    // }
 
-                    $form['placement_id'] = $placement_id;
-                    $form['side'] = $side;
+                    // $form['placement_id'] = $placement_id;
+                    // $form['side'] = $side;
                     $form['created_at'] = date('Y-m-d H:i:s');
 
                     // Handle wallet creation and other operations
