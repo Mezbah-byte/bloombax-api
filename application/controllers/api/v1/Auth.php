@@ -53,14 +53,13 @@ class Auth extends CI_controller
         $postdata = file_get_contents("php://input");
         $request = json_decode($postdata);
 
-        if (isset($request->email, $request->password, $request->name, $request->phone_number, $request->refered_by, $request->side)) {
+        if (isset($request->email, $request->password, $request->name, $request->phone_number, $request->refered_by)) {
             $email = $request->email;
             $password = $request->password;
             $firstName = $request->name;
             $phone_number = $request->phone_number;
             $username = $request->username;
             $refered_by = $request->refered_by;
-            $side = $request->side;
 
             $un_id = uniqid();
 
