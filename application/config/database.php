@@ -79,7 +79,7 @@ $db['default'] = array(
 
 	'username' => 'techsbjw_dfmtrade',
 	'password' => '92cDzzmPxLRC',
-	'database' => 'techsbjw_dfmtrade',
+	'database' => 'techsbjw_bloombax',
 
 	// 'username' => 'root',
 	// 'password' => '',
