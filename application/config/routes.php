@@ -81,3 +81,5 @@ $route['api/deposit'] = 'api/v1/home/deposit';
 $route['api/checkTransactionStatus'] = 'api/v1/home/checkTransactionStatus';
 $route['api/send_test_email'] = 'api/v1/auth/send_test_email';
 $route['api/send_verify_email/(:any)/(:any)/(:any)'] = 'api/v1/auth/send_verify_email/$1/$2/$3';
+
+$route['api/bmxPrice'] = 'api/v1/home/bmxPrice';
