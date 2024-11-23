@@ -1297,6 +1297,43 @@ DFM Trade Team.
             ->set_output($jsonResponse);
     }
 
+
+    function bmxPrice()
+    {
+        $response = array('status' => true, 'bmxPrice' => $this->customer_model->settingData('bmxPrice')['value']);
+
+        $jsonResponse = json_encode($response);
+        $this->output
+            ->set_content_type('application/json')
+            ->set_output($jsonResponse);
+    }
+
+    // function teamListForBinary()
+    // {
+    //     $postdata = file_get_contents("php://input");
+    //     $request = json_decode($postdata);
+
+    //     if (isset($request->sessionId)) {
+    //         $data = customerDetailsBySessionId($request->sessionId);
+    //         if ($data['status']) {
+    //             $userData = $data['data'];
+    //             $response = array();
+    //             $response['status'] = true;
+    //             $response['userData'] = $userData;
+    //             $response['teamDetails'] = build_team($userData['un_id']);
+    //         } else {
+    //             $response = array('status' => false, 'reason' => 'No user found.');
+    //         }
+    //     } else {
+    //         $response = array('status' => false, 'reason' => 'No sessionId found.');
+    //     }
+
+    //     $jsonResponse = json_encode($response);
+    //     $this->output
+    //         ->set_content_type('application/json')
+    //         ->set_output($jsonResponse);
+    // }
+
     function send_verify_email($to, $subject, $message)
     {
         $config = array(
